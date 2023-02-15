@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap');
+
+/* GENERAL STYLES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+    color: hsl(0, 0%, 100%);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lexend Legend', sans-serif;
+    line-height: 2rem;
+}
+
+body > .main-card {
+    background-color: hsl(244, 38%, 16%);
+    display: grid;
+    position: relative;
+    border-radius: 20px;
+    z-index: 2;
+    overflow: hidden;
+}
+
+body > .main-card > .text > p {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Inter';
+}
+
+body > .main-card > .text > .data_01 > p, .text > .data_02 > p, .text > .data_03 > p {
+    color: hsla(0, 0%, 100%, 0.6);
+}
+
+body > .main-card > .img {
+    grid-area: img;
+    position: relative;
+}
+
+body > .main-card > .img::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(105, 0, 153, 0.5);
+}
+
+body > .main-card > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+body > .main-card > .text {
+    grid-area: text;
+}
+
+body > .main-card > .text > .info {
+    grid-area: info;
+}
+
+body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+    display: flex;
+    flex-direction: column;
+}
+
+body > .main-card > .text > h1 > span {
+    color: hsl(277, 64%, 61%);
+}
+
+/* MOBILE LAYOUT */
+
+@media screen and (max-width: 767px), (min-width: 1080px) and (orientation:portrait) {
+    
+    body > .main-card {
+        width: 90vw;
+        height: 95vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 1fr 1fr;
+        grid-template-areas: 
+        "img"
+        "text"
+        "info";
+    }
+
+    body > .main-card > .text > h1 {
+        font-size: 1.75rem;
+        text-align: center;
+        padding: 1rem 1rem;
+    }
+
+    body > .main-card > .text > p {
+        font-size: 0.rem;
+        line-height: 1rem;
+        text-align: center;
+        padding: 0 1rem 1rem 1rem;
+    }
+    
+    body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    body > .main-card > .text > .info > .data_01 > p, .data_02 > p, .data_03 > p {
+        font-size: 0.8rem;
+        font-variant: small-caps;
+        font-family: 'Inter', sans-serif;
+        align-self: center;
+        justify-self: end;
+        padding-top: 2px;
+        color:hsla(0, 0%, 100%, 0.6);
+    }
+
+    body > .main-card > .text > .info > .data_01 > span, .data_02 > span, .data_03 > span {
+        align-self: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-bottom: 2px;
+    }
+}
+
+/* TABLET LAYOUT */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body > .main-card {
+        width: 90vw;
+        height: 45vh;
+        grid-template-columns: 55% 45%;
+        grid-template-rows: 1fr 70% 1fr;
+        grid-template-areas: 
+        "text img"
+        "text img"
+        "info img";
+    }
+    
+    body > .main-card > .text > h1 {
+        font-size: 1.8rem;
+        padding: 1rem 2rem;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    body > .main-card > .text > p {
+        font-size: 1rem;
+        padding: 0 2rem;
+        text-align: left;
+    }
+
+    body > .main-card > .text > .info {
+        display: flex;
+        justify-content: space-around;
+        text-transform: uppercase;
+        padding: 1rem 2rem 0 2rem;
+        font-size: 0.75rem;
+        color:hsla(0, 0%, 100%, 0.6);
+    }
+
+    body > .main-card > .text > .info > .data_01 > span, .data_02 > span, .data_03 > span {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color:hsl(0, 0%, 100%);
+    }
+
+    body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+}
+
+/* LOW RES DESKTOP */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    body > .main-card {
+        width: 80vw;
+        height: 65vh;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 1fr 70% 1fr;
+        grid-template-areas: 
+        "text img"
+        "text img"
+        "info img";
+    }
+
+    body > .main-card > .text {
+        padding: 1rem;
+    }
+
+    body > .main-card > .text > h1 {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    body > .main-card > .text > p {
+        font-size: 1rem;
+        margin: 1rem;
+    }
+
+    body > .main-card > .text > .info {
+        margin: 1rem;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-content:end;
+    }
+
+    body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        font-variant: small-caps;
+        color:hsla(0, 0%, 100%, 0.6);
+    }
+
+    body > .main-card > .text > .info > .data_01 > span, .data_02 > span, .data_03 > span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.25rem;
+        color:hsl(0, 0%, 100%);
+        
+    }
+}
+
+/* HIGH RES DESKTOP */
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 30px;
+    }
+    
+    body > .main-card {
+        width: 80vw;
+        height: 50vh;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 10%;
+        grid-template-areas: 
+        "text img"
+        "text img"
+        "info img";
+    }
+
+    body > .main-card > .text {
+        padding: 3rem;
+    }
+
+    body > .main-card > .text > h1 {
+        font-size: 2rem;
+        margin: 2rem;
+        line-height: 1.2;
+    }
+
+    body > .main-card > .text > p {
+        font-size: 1rem;
+        margin: 2rem;
+    }
+
+    body > .main-card > .text > .info {
+        margin: 2rem;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-content:end;
+    }
+
+    body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        font-variant: small-caps;
+        font-size: 0.8rem;
+        color:hsla(0, 0%, 100%, 0.6);
+    }
+
+    body > .main-card > .text > .info > .data_01 > span, .data_02 > span, .data_03 > span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color:hsl(0, 0%, 100%);
+    }
+}
+
+@media screen and (min-width: 1080px) and (orientation: portrait) {
+    body {
+        font-size: 30px;
+    }
+    
+    body > .main-card {
+        width: 90vw;
+        height: 30vh;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr 1fr 10%;
+        grid-template-areas: 
+        "text img"
+        "text img"
+        "info img";
+    }
+
+    body > .main-card > .text {
+        padding: 1rem;
+    }
+
+    body > .main-card > .text > h1 {
+        font-size: 2.5rem;
+        margin: 1rem;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    body > .main-card > .text > p {
+        font-size: 1.2rem;
+        margin: 1rem;
+        line-height: 1.5;
+    }
+
+    body > .main-card > .text > .info {
+        margin: 5vh 1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-content:end;
+    }
+
+    body > .main-card > .text > .info > .data_01, .data_02, .data_03 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-transform: uppercase;
+        font-variant: small-caps;
+        font-size: 0.8rem;
+        color:hsla(0, 0%, 100%, 0.6);
+    }
+
+    body > .main-card > .text > .info > .data_01 > span, .data_02 > span, .data_03 > span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 2rem;
+        color:hsl(0, 0%, 100%);
+    }
+}
