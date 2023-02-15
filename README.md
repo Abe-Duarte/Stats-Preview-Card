@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: (https://github.io/Abe-Duarte/Stats-Preview-Card)
+- Solution URL: (https://www.frontendmentor.io/solutions/stats-preview-card-htlm-css-_WUVUQ8Cxh)
+- Live Site URL: (https://abe-duarte.github.io/Stats-Preview-Card/)
 
 ### Built with
 
